@@ -39,12 +39,18 @@ function initialize(sLon, sLat, izoom) {
 }
 
 function  getUSGSData(){
-	var newxml = document.createElement("XML"); 
-	newxml.async = false; 
-	newxml.load('http://earthquake.usgs.gov/earthquakes/shakemap/rss.xml'); 
-		var sitetitle=newxml.selectNodes( "//channel" ).item( 0 ).selectSingleNode( "title" ).text; 
+			xhttp=new XMLHttpRequest();
+			xhttp.open("GET",'http://earthquake.usgs.gov/earthquakes/shakemap/rss.xml',false);
+			xhttp.send();
+			
+			var xmlDoc = xhttp.responseXML;
+
+	//var newxml = document.createElement("XML"); 
+	//newxml.async = false; 
+	//newxml.load('http://earthquake.usgs.gov/earthquakes/shakemap/rss.xml'); 
+		var sitetitle=xmlDoc.selectNodes( "//channel" ).item( 0 ).selectSingleNode( "title" ).text; 
 		var strHTML = ""; 
-		var newsitems = newxml.selectNodes( "//item" ); 
+		var newsitems = xmlDoc.selectNodes( "//item" ); 
 
 		// Walk the list of <items> nodes to generate the appropriate HTML 
 		for( var i = 0; i < 2; i++ ) { 
