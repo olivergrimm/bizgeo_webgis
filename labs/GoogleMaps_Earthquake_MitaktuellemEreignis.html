@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<style type="text/css">
+      html, body, #basicMap {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+      }
+	  .legende {
+		padding: 5px;
+		background-color: #ffffff;
+		border: 1px solid black;
+		filter:alpha(opacity=60);
+		opacity:0.75;
+		position:absolute;
+		left:100px;
+		top:30px;
+		width:320px;
+		z-index:1002;
+	  }
+</style>
+<title>Worldwide Earthquakes last 30 days</title>
+<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript"> 
+
+function initialize(sLon, sLat, izoom) { 
+	var myLatlng = new google.maps.LatLng(sLat,sLon);izoom;
+	var myOptions = {   
+			zoom: izoom,   
+			center: myLatlng,   
+			mapTypeId: google.maps.MapTypeId.ROADMAP 
+			};
+			var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);    
+			var georssLayer = new google.maps.KmlLayer('http://earthquake.usgs.gov/earthquakes/shakemap/rss.xml'); 
+			georssLayer.setMap(map);
+			georssLayer.set('preserveViewport', true);
+}
+
+function  getUSGSData(){
+	var newxml = document.createElement("XML"); 
+	newxml.async = false; 
+	newxml.load('http://earthquake.usgs.gov/earthquakes/shakemap/rss.xml'); 
+		var sitetitle=newxml.selectNodes( "//channel" ).item( 0 ).selectSingleNode( "title" ).text; 
+		var strHTML = ""; 
+		var newsitems = newxml.selectNodes( "//item" ); 
+
+		// Walk the list of <items> nodes to generate the appropriate HTML 
+		for( var i = 0; i < 2; i++ ) { 
+			strHTML += "<table title="+newsitems.item( i ).selectSingleNode( "title" ).text +"'>";
+			strHTML += "<tr><td><b>"+newsitems.item( i ).selectSingleNode( "title").text+"</b></td>";
+			strHTML += "<td>"+newsitems.item( i ).selectSingleNode( "pubDate").text+"</td>";
+			strHTML += "<td><a href='Javascript:initialize(" + newsitems.item( i ).selectSingleNode( "geo:long").text + "," + newsitems.item( i ).selectSingleNode( "geo:lat").text + ",10" + ")'>anzeigen</a></td>";
+			strHTML += "</table>"; 
+		} 
+	return strHTML;
+}	
+
+</script> 
+</head> 
+<body onload="initialize(33,55,3);"> 
+	<!--div id="shortlist" style="top:0px;width:700px; height:90px; background-color:white; z-index:1;"><font size="2" face="Arial" color="blue">Letzte 3 Erdbeben waren:<script language='javascript'>document.write(getUSGSData());</script></font></div-->
+	 <div id="shortlist" class="legende">	
+	 	<font size="2" face="Arial" color="blue">Letzte 2 Erdbeben: 	
+			<script language='javascript'>document.write(getUSGSData());</script>
+		</font>
+	</div>
+	<div id="map_canvas" style="top:0px;width:100%; height:100%; z-index:3;" ></div>
+</body> 
+</html>
+
