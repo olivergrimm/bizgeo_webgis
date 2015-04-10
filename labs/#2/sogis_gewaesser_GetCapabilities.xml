@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 5.6.7 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SWF OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS SUPPORTS=RGBA_PNG INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>WMS Dienst zu den Themen Gewässer und Grundwasser des Kanton Solothurn</Title>
+  <Abstract>Datengrundlage: Hydrogeologische GIS-Karte des Kantons Solothurn sowie alle zur Zeit der Erhebung bekannten geologischen Kartierungen und Bohrungen (inkl. GASO-Daten) Erhebungsmethode: Kompilation bestehender Untersuchungen, angepasst an den Massstab 1:10 000 (Übersichtsplan) Erfassungsmethode: Digitalisation bestehender Karten; Erfassung von Bohrungen in einer Tabelle; Konstruktion des Layers am Bildschirm aufgrund der Eingabedaten und aufgrund geologischer und hydrogeologischer Überlegungen. Zeitstände (von - bis): 17.11.2003 - 17.11.2003 Maßstab: 1 : 10 000</Abstract>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/>
+  <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Dr. Horst Düster</ContactPerson>
+      <ContactOrganization>Amt für Geoinformation</ContactOrganization>
+    </ContactPersonPrimary>
+      <ContactPosition>Abteilung SO!GIS Koordination</ContactPosition>
+      <ContactVoiceTelephone>++41 (0) 32 627 25 32</ContactVoiceTelephone>
+  <ContactElectronicMailAddress>sogis@so.ch</ContactElectronicMailAddress>
+  </ContactInformation>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/vnd.wap.wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+<!-- WARNING: The layer name 'Gewässer' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+    <Name>Gewässer</Name>
+    <Title>WMS Dienst zu den Themen Gewässer und Grundwasser des Kanton Solothurn</Title>
+    <Abstract>Datengrundlage: Hydrogeologische GIS-Karte des Kantons Solothurn sowie alle zur Zeit der Erhebung bekannten geologischen Kartierungen und Bohrungen (inkl. GASO-Daten) Erhebungsmethode: Kompilation bestehender Untersuchungen, angepasst an den Massstab 1:10 000 (Übersichtsplan) Erfassungsmethode: Digitalisation bestehender Karten; Erfassung von Bohrungen in einer Tabelle; Konstruktion des Layers am Bildschirm aufgrund der Eingabedaten und aufgrund geologischer und hydrogeologischer Überlegungen. Zeitstände (von - bis): 17.11.2003 - 17.11.2003 Maßstab: 1 : 10 000</Abstract>
+    <SRS>epsg:21781</SRS>
+    <SRS>epsg:4326</SRS>
+    <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+    <BoundingBox SRS="EPSG:21781"
+                minx="590000" miny="212000" maxx="650000" maxy="265000" />
+    <ScaleHint min="0.0438061037645535" max="678.994608350579" />
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gsab</Name>
+        <Title>Gewässerschutzbereiche</Title>
+        <Abstract>Beschreibung:  Oberflächengewässer - Gewässerschutzbereich Ao: 
+									  Gebiete ausserhalb des Bereichs Au, die an Gewässer grenzen, an welche erhöhte qualitative Anforderungen gestellt werden. Darunter fallen z.B. Gewässer, die über eine kurze Infiltrationsstrecke eine Trinkwaserversorgung speisen oder als Badegewässer genutz werden. Im Bereich Ao dürfen keine Anlagen erstellt werden, die eine besondere Gefahr für das Gewässer darstellen. 
+										Grundwasser - Gewaesserschutzbereich Au:
+										Gebiete mit nutzbaren Grundwasservorkommen sowie die zu ihrem Schutz notwendigen Randgebiete: Karstgebiete mit hoher Vulnerabilität (Schutzschicht über wasserführenden Kalkgesteinen gering oder gar nicht vorhanden, schlechte Filtereigenschaften). In diesen Gebieten besteht eine erhöhte Gefährdung durch Abwässer, Mineralöle, Chemkalien, etc. und durch bauliche Massnahmen, Materialabbau sowie Eingriffe in den Grundwasserhaushalt (z.B. Drainagen, Wasserhaltungen, Einbauten, Abgrabungen, Flussverbauungen).
+										Grundwasser - übrige Bereiche:
+										Gebiete, deren Wasservorkommen für die Versorgung weniger bedeutend sind. Karstvorkommen geringer Vulnerabilität (mächtige Schutzschichten). Bei tiefgreifenden Vorhaben (z.B. Bohrungen) ist die Gefährdung der Grundwasservorkommen im einzelnen abzuklären.
+ 										Datengrundlage:  Geologische-hydrogeologische Karten insb. geol. GIS-Karte, WVA, GASO-Datenbank, GSchV  
+ 										Erhebungsmethode:  Kompilation im Rahmen der Gesamtüberarbeitung der einzelnen Gewässerschutzkartenblätter 1 - 4 auf Basis LK 1:25 000. Grenzziehung passt sich den entsprechenden Signaturen an!  
+ 										Erfassungsmethode:  Digitalisierung ab Papiervorlage (Blätter 1 und 2) oder Nachführung direkt am Bildschirm (Blätter 3 und 4)  
+ 										Zeitstand:  23.09.2005
+ 										Maßstab:  1:25 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200803"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="320" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gsab&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0.000438061037645535" max="262.836622587321" />
+    </Layer>
+    <Layer>
+<!-- WARNING: The layer name 'Schutzzonen ausserhalb Kanton' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+      <Name>Schutzzonen ausserhalb Kanton</Name>
+      <Title>Schutzzonen ausserhalb Kanton</Title>
+      <Abstract>Schutzzonen ausserhalb Kanton</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoak_01</Name>
+        <Title>Grundwasserschutzzonen und -areale (ausserkantonal)</Title>
+        <Abstract>Beschreibung:  Ausserkantonale Grundwasserschutzzonen und -areale nach GSchG und GSchV, welche an den Kanton Solothurn grenzen.  
+ 									  Datengrundlage:  Angaben der Nachbarkantone  
+										Erfassungsmethode:  Digitalisierung ab Papiervorlagen, z.T. auch digitale Übernahme  
+ 										Zeitstand:  03.11.2005
+ 										Maßstab:  Variabel: 1:1 000 bis 1:5 000 selten auch 1:10 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200807"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="399" height="105">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoak_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0.000438061037645535" max="10.9515259411384" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoak_02</Name>
+        <Title>Grundwasserschutzzonen und -areale (ausserkantonal)</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200807"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="198" height="105">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoak_02&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="10.951964002176" max="21.9030518822767" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoak_03</Name>
+        <Title>Grundwasserschutzzonen und -areale (ausserkantonal)</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200807"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="356" height="130">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoak_03&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="21.9034899433144" max="262.836622587321" />
+      </Layer>
+    </Layer>
+    <Layer>
+<!-- WARNING: The layer name 'Schutzzonen und Schutzareale' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+      <Name>Schutzzonen und Schutzareale</Name>
+      <Title>Schutzzonen und Schutzareale</Title>
+      <Abstract>Schutzzonen und Schutzareale</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoar_01</Name>
+        <Title>Grundwasserschutzzonen und -areale</Title>
+        <Abstract>Beschreibung:  Rechtsgültige Schutzzonen nach Art. 20 GschG und Anhang 4 GSchV innerhalb der Grenzen des Kantons Solothurn, unterteilt in die Teilzonen S1, S2 und S3. Es gelten jeweils die minimalen Nutzungsbeschränkungen nach GSchV sowie zusätzlich die speziellen Bestimmungen gemäss der jeweiligen Schutzzonenreglemente. Bei einigen Schutzzonen wurden Zonen mit speziellen Regelungen ausgescheiden (</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200806"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="399" height="180">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoar_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0.000438061037645535" max="10.951964002176" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoar_02</Name>
+        <Title>Grundwasserschutzzonen und -areale</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200806"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="356" height="180">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoar_02&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="10.951964002176" max="21.9034899433144" />
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gszoar_03</Name>
+        <Title>Grundwasserschutzzonen und -areale</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200806"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="356" height="180">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gszoar_03&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="21.9034899433144" max="262.836622587321" />
+      </Layer>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gwomac</Name>
+        <Title>Grundwassermächtigkeiten</Title>
+        <Abstract>Die Daten geben die Linien gleicher Grundwassermächtigkeiten im Bereich der grossen Grundwasserströme (Grundwasservorkommen in den Talauen) in 10m-Abständen wieder (sog. Isopachen).
+									 Dargestellt wird die Mächtigkeit bei tiefem Grundwasserstand (TGW).
+									 Abhängig von der Definition des Stauers ergeben sich unterschiedliche Stauerisohypsen und somit auch unterschiedl. Mächtigkeiten. In der Witi wurde der gesamte Lockergesteinskörper (Kies, (Fein-)Sand, Silt) als Grundwasserleiter bertrachtet, was entsprechend grosse Mächtigkeiten ergibt. In den übrigen Gebieten wurden dagegen nur die hochdurchlässigen Kiesschichten betrachtet.
+									 Ohne das Attribut Maechtigkeit darzustellen entspricht der Datensatz den </Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201103"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="97" height="155">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gwomac&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gsmiso</Name>
+        <Title>mittlerer Grundwasserspiegel</Title>
+        <Abstract>Beschreibung:  grobe Darstellung eines mittleren bis tiefen Grundwasserspiegels  
+ 									  Datengrundlage:  diverse Gutachten und Publikationen  
+ 										Erhebungsmethode:  Kompilation  
+ 										Erfassungsmethode:  Digitalisiert ab Vorlage  
+ 										Zeitstand:  23.02.1996
+ 										Maßstab:  1:50 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201101"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="316" height="30">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gsmiso&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="262.836622587321" />
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gwstau</Name>
+        <Title>Grundwasserstauer</Title>
+        <Abstract>Beschreibung:  Der Datenlayer beschreibt die Höhenlinien (Isohypsen) der Oberläche des Grundwasserstauers (Aquiclude) im 10m-Abstand und stellt im groben Massstab die Untergrenze der regionalen Grundwasserleiter dar. Die Isolinien wurden durch Kompilation sämtlicher bekannter und auswertbarer Bohrprofile etc. mittels Interpolation der Einzelstandorte ermittelt.  
+ 									  Datengrundlage:  Bohrprofile, geologische und hydrogeologische Gutachten  
+ 										Erhebungsmethode:  Datenauswertung von bewilligten Sondierbohrungen im Zusammenhang mit Bauvorhaben, Nutzungsplanungen und projektspezifischen hydrogeologischen Untersuchungen von Privaten sowie von systematischer Grundlagenforschung durch das AfU mittels regionaler hydrogeologischer und geophysikalischer Studien  
+ 										Erfassungsmethode:  Digitalisierung ab Papiervorlage  
+ 										Zeitstand:  23.02.1996
+ 										Maßstab:  1:10000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201104"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="316" height="30">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gwstau&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="262.836622587321" />
+    </Layer>
+    <Layer>
+      <Name>gewaesser</Name>
+      <Title>Gewaesser</Title>
+      <Abstract>gewaesser</Abstract>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>gewaesser_01</Name>
+        <Title>Fliessgewässer</Title>
+        <Abstract> Bei der ökomorphologischen Kartierung wurde der Zustand der Fliessgewässer des Kantons Solothurn und ökologische Defizite erfasst. Mit Ausnahme der Aare (zu gross für diese Methode) wurden alle im Gewässernetz 1:10 000 vorhandenen Fliessgewässer flächendeckend erfasst. Die angewendete Methode ist im BUWAL-Bericht (HÜTTE &amp; NIEDERHAUSER 1998) ausführlich beschrieben.
+									 	 Die Erhebungen umfassen Daten zur Morphologie (Gewässerzustand und -struktur), zu wasserbaulichen Massnahmen (Begradigung Kanalisierung, Verbauung Sohle, Verbauung Ufer) und zum Umland (Bebauung, Landnutzung, Vegetation).
+										 Die Aufnahmen erfolgten mit Hilfe von Erhebungsbogen, welche 23 im BUWAL-Bericht definierte Merkmale umfassen. Diese wurden durch 4 Solothurner Parameter ergänzt (dominierendes Sohlensubstrat, Nutzung des Umlandes links- und rechtsufrig, überhängende Vegetation). Alle Merkmale bzw. Parameter wurden bei einer lückenlosen Begehung der Gewässer erhoben. Kartiert wurde flussaufwärts, von der Mündung bis zur Quelle. Es wurden Abschnitte gebildet, innerhalb derer die betrachteten Merkmale gleich blieben. Bei Änderung von mindestens einem im BUWAL-Bericht definierten Merkmal wurde ein neuer Abschnitt gebildet. Die minimale Abschnittslänge betrug 25 m.
+										 Die Daten wurden in einer vom Bundesamt für Wasser und Geologie (BWG) zur Verfügung gestellten Access-Applikation erfasst. Plausibilisierung der Daten und alle Berechnungen erfolgen automatisch über die Applikation. Auf Grund der erfassten Parameter wird rechnerisch eine Gesamtbewertung vorgenommen (Klasse), welche die Naturnähe des Gewässers beschreibt. Daraus lässt sich ein Handlungsbedarf für strukturelle Lebensraumverbesserungen ableiten.
+										 Zudem wurde nach einer Formel des BWG berechnet, ob der Uferbereich (der dem Gewässer zur Verfügung stehende Bereich) genügend oder ungenügend ist.
+										 Datengrundlage: 	Kilometriertes Gewässernetz 1:10 000
+										 Erhebungsmethode: 	Felderhebung mit Erhebungsbogen
+										 Erfassungsmethode: 	Access-Applikation BWG
+										 Zeitstand: 	14.12.2001
+										 Maßstab: 	1 : 10 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=300701"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="142" height="455">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gewaesser_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gewaesser_02</Name>
+        <Title>Fliessgewässer</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=300701"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="82" height="80">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gewaesser_02&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="262.836622587321" />
+      </Layer>
+      <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>gewaesser_03</Name>
+        <Title>Fliessgewässer</Title>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=300701"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="106" height="30">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gewaesser_03&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0.0438061037645535" max="15.3321363175937" />
+      </Layer>
+    </Layer>
+    <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gshiso</Name>
+        <Title>Grundwasserisohypsen bei höchstem Grundwasserstand (HGW) </Title>
+        <Abstract>Beschreibung:  Isohypse des Grundwasserspiegels mit Kote in m ü.M., Verbindung der bekannten Höchstkoten seit 1980 (Extremewerte vor 1980 wurden ignoriert). 
+									 Blatt 1 (Dorneck, Thierstein): 1998 Blatt 2 (Thal): 1996 Blatt 3 (Solothurn, Lebern, Bucheggberg, Wasseramt): 2003
+									 Blatt 4 (Olten, Gösgen, Gäu): 2000  
+ 									 Datengrundlage:  Hydrografische Jahrbuch sowie weitere Messungen, diverse Berichte, Gutachten, Modelle insb. im Bereich Einbauten ins Grundwasser.
+									 NEU auf Blatt 4: Grundwassergebiete ausserhalb Zone Au in der Witi  
+ 									 Erhebungsmethode:  Kompilation im Rahmen der Gesamtüberarbeitung der einzelnen Gewässerschutzkartenblätter. Z.T. basiert auf Intepolationsprogrammen (Spatial Analyst)  
+ 									 Erfassungsmethode:  Digitalisieren ab Papiervorlage (Blätter 1 und 2), direkte Erfassung am Bildschirm (Blätter 3 und 4).  
+ 									 Zeitstand:  06.08.2004
+									 Maßstab:  1:25 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=200804"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="328" height="30">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gshiso&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+        <ScaleHint min="0" max="262.836622587321" />
+    </Layer>
+    <Layer>
+<!-- WARNING: The layer name 'Fassungen etc.' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+      <Name>Fassungen etc.</Name>
+      <Title>Fassungen etc.</Title>
+      <Abstract>Fassungen etc.</Abstract>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gaso_01</Name>
+        <Title>Fassungen mit Schutzzone S</Title>
+        <Abstract>Beschreibung:  Orientierender Katalog der Grundwasserfassungen (Quellen und Pumpwerke), Anlagen der Wasserversorgung (ohne Leitungen), Messstellen der Grund- und Oberflächengewässer, Bohrungen, Erdwärmesonden sowie einiger ungefasster Quellen etc.
+									  Alle Angaben sind rechtlich unverbindlich. Die Daten wurden nach bestem Wissen erhoben, können aber trotzdem fehlerhaft sein. Dies gilt insbesondere für die geographische Lage der Anlagen, die Angabe, ob Quellen und Pumpwerke im Eigentum öffentlicher Körperschaften(G) oder private Fassungen von öffetlichem Interesse (P) sind, sowie für die Schüttung der Quellen.  
+ 										Datengrundlage:  Direkte Erhebungen vor Ort oder aufgrund von Akten, technischen Berichten, Angaben von Gemeinden, Eigentümern etc. / Lokalisierung basiert häufig auf 10 000er Karte oder grösser und ist somit meist nur auf 10 m genau.  
+ 										Erhebungsmethode:  Grundwasserfassungen: periodische Erhebungen durch Amt für Umwelt;  
+ 										Erfassungsmethode:  Digitale Eingabe der Koordinaten  
+ 										Zeitstand:  01.02.2007
+ 										Maßstab:  1:10 000</Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201602"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="347" height="680">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gaso_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gaso_02</Name>
+        <Title>Fassungen mit Schutzzone S Schüttungsuhren geschützt GA, GV GH GS QU (1 bis 6500)</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201602"/>
+        </MetadataURL>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gaso_ohne_s_01</Name>
+        <Title>Fassungen ohne Schutzzone S</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201602"/>
+        </MetadataURL>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="347" height="805">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=gaso_ohne_s_01&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0" cascaded="0">
+        <Name>gaso_ohne_s_02</Name>
+        <Title>Fassungen ohne Schutzzone S Schüttungsuhren geschützt GA, GV GH GS QU (1 bis 6500)</Title>
+        <Abstract></Abstract>
+        <SRS>EPSG:21781</SRS>
+        <SRS>EPSG:4326</SRS>
+        <LatLonBoundingBox minx="7.30581" miny="47.0571" maxx="8.10264" maxy="47.5357" />
+        <BoundingBox SRS="EPSG:21781"
+                    minx="590000" miny="212000" maxx="650000" maxy="265000" />
+        <MetadataURL type="FGDC">
+          <Format>text/html</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sogis1.so.ch/sogis/metaDB/datenbeschreibungen/datenbeschreibung.php?id=201602"/>
+        </MetadataURL>
+      </Layer>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>
