@@ -1,0 +1,11 @@
+http://sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?
+SERVICE=WMS&
+REQUEST=GetMap&
+LAYERS=gsab&
+FORMAT=image/png&
+BBOX=607000,225000,608000,226000&
+SRS=EPSG:21781&
+WIDTH=1000&
+HEIGHT=1000&
+STYLE=Default&
+VERSION=1.1.0

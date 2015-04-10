@@ -1,0 +1,3 @@
+http://sogis1.so.ch/cgi-bin/sogis/sogis_gewaesser.wms?
+SERVICE=WMS&
+REQUEST=GetCapabilities
