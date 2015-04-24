@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.4.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+    <script src="http://openlayers.org/en/v3.4.0/build/ol.js" type="text/javascript"></script>
+    <title>BIZ-Geo: Kurs Web-GIS</title>
+  </head>
+  <body>
+    <h2>&Uumlbung 4</h2>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+	  var projection = ol.proj.get('EPSG:3857');
+	
+      var bm = new ol.layer.Tile({
+	      source: new ol.source.OSM()
+          });
+		  
+	  var baustellen = new ol.layer.Vector({
+          source: new ol.source.KML({
+          projection: projection,
+		  url: 'Baustellen/doc.kml'
+           })
+          });	  
+		  
+	  var map = new ol.Map({
+        target: 'map',
+        layers: [bm, baustellen],
+        view: new ol.View({
+          center: ol.proj.transform([8.53123, 47.37840], 'EPSG:4326', 'EPSG:3857'),
+          zoom: 18
+        })
+      });
+    </script>
+  </body>
+</html>
